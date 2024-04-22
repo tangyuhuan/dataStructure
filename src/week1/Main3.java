@@ -1,8 +1,14 @@
 package week1;
 import java.util.Scanner;
 
+//注意：这个版本运行超时了
 //作业2：Maximum Subsequence Sum
+//https://pintia.cn/problem-sets/1738108464136978432/exam/problems/1738108464208281604?type=7&page=0
 //最大子列和基础上改造，输出结果为sum,leftIndex,rightIndex
+//思路：用list[0]初始化MaxSum,
+// 如果当前子列和的值是负数的，不管后面加什么数，都只会让后面的数字越变越小，还不如从头加起，抛弃之。
+// 新建三个变量int leftIndex=0,templeft=0, rightIndex=0;用于标记子列和的左右位置和左侧的临时位置
+
 /*输入
 10
 -10 1 2 3 4 -5 -23 3 7 -21
@@ -37,7 +43,7 @@ public class Main3 {
                 leftIndex = templeft;
             } else if (intThisSum < 0) {/* 如果当前子列和为负*/
                 intThisSum = 0;/* 则不可能使后面的部分和增大，抛弃之*/
-                templeft = i+1;
+                templeft = i+1;/* 更新左侧临时标记*/
             }
         }
         //If all the K numbers are negative, then its maximum sum is defined to be 0, and you are supposed to output the first and the last numbers of the whole sequence.
