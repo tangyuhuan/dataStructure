@@ -1,6 +1,10 @@
 package week1;
-/*给定N个整数的序列 {A1,A2,,,,An}
-求子列和的最大值*/
+/*
+最大子列和的四种算法
+给定N个整数的序列 {A1,A2,,,,An}
+求子列和的最大值
+
+*/
 
 import java.util.Scanner;
 
