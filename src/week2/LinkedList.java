@@ -1,6 +1,9 @@
 package week2;
 
 //线性表的定义与操作：链式存储
+/*什么是抽象的链表：
+1.有块地方存储数据
+2.有块地方存指针-------下一个节点的地址*/
 public class LinkedList<T> {
     private Node<T> head;// 头结点
     private int size; // 链表的大小
@@ -8,7 +11,7 @@ public class LinkedList<T> {
     // 结点类,静态内部类
     private static class Node<T> {
         private T data;//节点数据
-        private Node<T> next; //下一个节点
+        private Node<T> next; //指针域，下一个节点
 
         // 结点构造函数
         public Node(T data) {

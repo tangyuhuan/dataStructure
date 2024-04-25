@@ -20,6 +20,15 @@ package week2;
 题目：https://pintia.cn/problem-sets/1738108464136978432/exam/problems/type/7?problemSetProblemId=1738108464208281605&page=0
 完整测试数据：https://blog.csdn.net/acDream_/article/details/82730484
 
+算法：
+a.定义链表结构存储非零项
+链表中每个节点存储多项式的一个非零项，包括系数、指数两个数据域以及一个指针域
+b.两个多项式相加的二路归并算法：
+利用归并排序思想，将两个多项式按照指数高低逐项比较，并将较小的项插入到结果多项式中。
+b.两个多项式相加的二路归并算法：
+利用归并排序思想，将两个多项式按照指数高低逐项比较，并将较小的项插入到结果多项式中。
+初始化两个指针，分别指向两个多项式的头节点
+循环比较两个多项式当前节点的指数大小
  */
 
 import java.util.Scanner;
@@ -50,12 +59,15 @@ public class Main1 {
 
     }
 }
-
+/*什么是抽象的链表：
+1.有块地方存储数据
+2.有块地方存指针-------下一个节点的地址*/
 class Polynomial {
     private int size;
     private Node head;// 头结点
 
     //    private static
+    //节点类
     private static class Node {//系数，指数，指针域
         private int m;//系数
         private int n;//指数
