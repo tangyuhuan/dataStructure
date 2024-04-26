@@ -20,6 +20,7 @@ package week2;
 题目：https://pintia.cn/problem-sets/1738108464136978432/exam/problems/type/7?problemSetProblemId=1738108464208281605&page=0
 完整测试数据：https://blog.csdn.net/acDream_/article/details/82730484
 
+这道题给出了非零项个数，所以比较简单的方法是利用数组，但是为了考察链表的应用，下面用链表方式实现。
 算法：
 a.定义链表结构存储非零项
 链表中每个节点存储多项式的一个非零项，包括系数、指数两个数据域以及一个指针域
@@ -64,7 +65,11 @@ class Polynomial {
     private int size;
     private Node head;// 头结点
 
-    //    private static
+    //关于静态内部类：
+    //静态内部类使用场景一般是当外部类需要使用内部类，而内部类无需外部类资源，并且内部类可以单独创建的时候会考虑采用静态内部类的设计
+    //语法角度这里声明非静态的内部类也ok
+    //参考：https://blog.csdn.net/qq_43581790/article/details/123890992
+
     //节点类
     private static class Node {//系数，指数，指针域
         private int m;//系数
