@@ -95,13 +95,14 @@ class Polynomial {
         this.head = null;
     }
 
-    //插入
+    //插入，根据m和n构造新结点，插到当前结果表达式的后面
     public void insert(int m, int n) {
         Node newNode = new Node(m, n);
         if (this.head == null) {
             this.head = newNode;
         } else {
             Node preNode = this.head;
+            //也可以保存当前最后一个结点的指针位置，就不用每次insert都遍历了
             for (int i = 0; i < size - 1; i++) {
                 //查找原list的最后一个结点
                 preNode = preNode.next;
