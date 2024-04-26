@@ -161,7 +161,10 @@ class Polynomial {
                 p3.insert(current1.m, current1.n);
                 current1 = current1.next;
             } else if (current1.n == current2.n) {
-                p3.insert(current1.m + current2.m, current1.n);
+                int sum = current1.m + current2.m;
+                if(sum!=0){
+                    p3.insert(current1.m + current2.m, current1.n);//注意判断系数和是否为零,为零就不放入链表中
+                }
                 current1 = current1.next;
                 current2 = current2.next;
             } else {
