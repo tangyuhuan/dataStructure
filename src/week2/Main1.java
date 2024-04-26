@@ -172,16 +172,13 @@ class Polynomial {
                 current2 = current2.next;
             }
         }
-        if (current1 == null) {
-            while (current2 != null) {
-                p3.insert(current2.m, current2.n);
-                current2 = current2.next;
-            }
-        } else {
-            while (current1 != null) {
-                p3.insert(current1.m, current1.n);
-                current1 = current1.next;
-            }
+        while (current2 != null) {
+            p3.insert(current2.m, current2.n);
+            current2 = current2.next;
+        }
+        while (current1 != null) {
+            p3.insert(current1.m, current1.n);
+            current1 = current1.next;
         }
         return p3;
     }
