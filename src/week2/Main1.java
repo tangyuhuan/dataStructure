@@ -28,6 +28,7 @@ b.两个多项式相加的二路归并算法：
 利用归并排序思想，将两个多项式按照指数高低逐项比较，并将较小的项插入到结果多项式中。
 初始化两个指针，分别指向两个多项式的头节点
 循环比较两个多项式当前节点的指数大小
+c.两个多项式相乘：乘法运算转换为加法运算,将p1当前项(ci,ei)乘p2多项式，再加到结果多项式里
  */
 
 import java.util.Scanner;
@@ -113,7 +114,7 @@ class Polynomial {
     }
 
     public void print() {
-//        注意了！！要用一个Node节点来移动指针，this.head不能动，不然print完，this.head就为null了
+//        注意了！！要用一个Node节点来移动指针（ Node current = this.head;），this.head不能动，不然print完，this.head就为null了
         Node current = this.head;
         int tempSize = 0;
         boolean noValue = true;
@@ -122,7 +123,7 @@ class Polynomial {
             if(current.toString()!=""){
                 noValue = false;
                 if (tempSize++ != 0) {
-                    System.out.print(" ");
+                    System.out.print(" ");//由于最后一项不能有空格，输出的多项式结构可以理解为 “ ”+系数+指数，第一项前没有空格
                 }
                 System.out.print(current);
             }
@@ -189,7 +190,8 @@ class Polynomial {
         return p3;
     }
 
-    //两个多项式相乘：
+    //两个多项式相乘：乘法运算转换为加法运算,将p1当前项(ci,ei)乘p2多项式，再加到结果多项式里
+    //下面用了数组，其实可以不用
     //根据多项书相乘的过程，每轮相乘结果放入Polynomial[this.size* p.size]数组，遍历数组求和：把系数为1的项到n-1项，逐个加到系数为0的项
     public Polynomial multiplication(Polynomial p) {
         if(this.size* p.size==0){
