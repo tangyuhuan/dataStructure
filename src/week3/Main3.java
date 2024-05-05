@@ -15,6 +15,8 @@ pop的顺序就是中序的顺序
 
 题目：https://pintia.cn/problem-sets/1738108464136978432/exam/problems/type/7?problemSetProblemId=1738108464208281610&page=0
 题解：https://www.cnblogs.com/qinmin/p/12868261.html
+陈越题解：3.5习题选讲-Tree Traversals Again
+陈越题解视频：https://www.icourse163.org/learn/ZJU-93001?tid=1471851460#/learn/content?type=detail&id=1257031153&cid=1290304457&contentid=1841013
 代码执行可视化网站：https://pythontutor.com/render.html#mode=display
 
 Sample Input:
